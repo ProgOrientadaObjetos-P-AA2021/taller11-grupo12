@@ -12,6 +12,11 @@ public class MenuCarta extends Menu{
         valorGuarnicion = vG;
         valorBebida = vB;
     }
+    
+    @Override
+    public void setValorMenu(){
+        valorMenu = valorGuarnicion + valorBebida + porcentajeAdicional;
+    } 
             
     public void setValorGuarnicion(double x){
         valorGuarnicion = x;
@@ -29,8 +34,8 @@ public class MenuCarta extends Menu{
         return valorBebida;
     }
     
-    public void setPorcentajeAdicional(double x){
-        porcentajeAdicional = x;
+    public void setPorcentajeAdicional(){
+        porcentajeAdicional = valorInicialMenu;
     }       
     
     public double getPorcentajeAdicional(){
@@ -39,20 +44,16 @@ public class MenuCarta extends Menu{
     
     @Override
     public String toString(){
-        String cadena = String.format("Ariendo de Local Comida\n"
-                + "Nombre Arrendatario: %s\n"
-                + "Cuota base: %.2f\n"
-                + "Valor luz: %.2f\n"
-                + "Valor agua: %.2f\n"
-                + "Porcentaje iva: %.2f\n"
-                + "Arriendo Total: %.2f\n", 
-                obtenerNombreArrendatario(),
-                obtenerCuotaBase(),
-                obtenerValorLuz(),
-                obtenerValorAgua(),
-                obtenerIva(),
-                obtenerArriendoMensual());
+        String cadena = String.format("Menu a la carta\n"
+                + "Nombre del plato: %s\n"
+                + "Valor del menu: %.2f\n"
+                + "Valor inicial del menu: %.2f\n"
+                + "Valor porcion de guarnicion: %.2f\n"
+                + "Valor de bebida: %.2f\n",
+                getNombrePlato(),getValorMenu(),
+                getValorInicialMenu(),getValorGuarnicion(),
+                getValorBebida());
         
         return cadena;
-    }
+    }    
 }
