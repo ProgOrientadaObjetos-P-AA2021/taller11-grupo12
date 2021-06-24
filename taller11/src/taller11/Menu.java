@@ -1,10 +1,16 @@
 package taller11;
 
-public class Menu {
+public abstract class Menu {
     
-    private String nombrePlato;
-    private double valorMenu;
-    private double valorInicialMenu;
+    protected String nombrePlato;
+    protected double valorMenu;
+    protected double valorInicialMenu;
+    
+    public Menu(String nombre, double vMenu, double vIM){
+        nombrePlato = nombre;
+        valorMenu = vMenu;
+        valorInicialMenu = vIM;
+    }
     
     public void setNombrePlato(String x){
         nombrePlato = x;
@@ -14,9 +20,7 @@ public class Menu {
         return nombrePlato;
     }
     
-    public void setValorMenu(double x){
-        valorMenu = x;
-    }       
+    public abstract void setValorMenu();       
     
     public double getValorMenu(){
         return valorMenu;
@@ -29,4 +33,5 @@ public class Menu {
     public double getValorInicialMenu(){
         return valorInicialMenu;
     }
+    
 }
