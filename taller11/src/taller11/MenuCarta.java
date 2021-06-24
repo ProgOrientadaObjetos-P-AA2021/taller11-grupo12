@@ -1,14 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package taller11;
 
-/**
- *
- * @author pc
- */
-public class MenuCarta {
+public class MenuCarta extends Menu{
     
+    public double valorGuarnicion;
+    public double valorBebida;
+    public double porcentajeAdicional;
+            
+    public void setValorGuarnicion(double x){
+        valorGuarnicion = x;
+    }       
+    
+    public double getValorGuarnicion(){
+        return valorGuarnicion;
+    }
+    
+    public void setValorBebida(double x){
+        valorBebida = x;
+    }       
+    
+    public double getValorBebida(){
+        return valorBebida;
+    }
+    
+    public void setPorcentajeAdicional(double x){
+        porcentajeAdicional = x;
+    }       
+    
+    public double getPorcentajeAdicional(){
+        return porcentajeAdicional;
+    }
 }
