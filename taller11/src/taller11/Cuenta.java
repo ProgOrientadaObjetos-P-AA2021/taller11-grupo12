@@ -1,8 +1,10 @@
 package taller11;
 
+import java.util.ArrayList;
+
 public class Cuenta {
     
     private String nombreCliente;
-    private Arraylist<Menú> menus; 
+    private ArrayList<Menú> menus; 
     
 }
