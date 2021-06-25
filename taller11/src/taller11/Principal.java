@@ -10,22 +10,22 @@ public class Principal {
         MenuDia menuDia1 = new MenuDia("Mixta con pollo",8,2,2);
         menuDia1.getValorMenu();
         
-        MenuCarta menuCarta1 = new MenuCarta("Mixta con pollo",8,2,2);
-        menuDia1.getValorMenu();
+        MenuCarta menuCarta1 = new MenuCarta("Bandera",8,2,2);
+        menuCarta1.setPorcentajeAdicional();
+        menuCarta1.getValorMenu();
         
-        listaMenus.add(arriendoComida);
-        listaMenus.add(arriendoComercial);
-        listaMenus.add(arriendoSesiones);
+        listaMenus.add(menuDia1);
+        listaMenus.add(menuCarta1);        
         
-        for (int i = 0; i < listaArriendos.size(); i++) {
-            listaArriendos.get(i).establecerArriendoMensual();
+        for (int i = 0; i < listaMenus.size(); i++) {
+            listaMenus.get(i).setValorMenu();
         }
         
-        CentroComercial centro = new CentroComercial("La Pradera", 
-                listaArriendos);
-        centro.establecerTotalArriendosBaseMensual();
-        centro.establecerTotalArriendosFinalMensual();
-        System.out.println(centro);
+        Cuenta cuenta1 = new Cuenta("Jandry Jaramillo", listaMenus);
+        cuenta1.setSubTotal();
+        cuenta1.setIva();
+        cuenta1.setValorTotal();
+        System.out.println(cuenta1);
         
     }
 }
