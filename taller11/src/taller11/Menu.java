@@ -32,6 +32,5 @@ public abstract class Menu {
     
     public double getValorInicialMenu(){
         return valorInicialMenu;
-    }
-    
+    }    
 }
