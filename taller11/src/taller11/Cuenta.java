@@ -10,6 +10,11 @@ public class Cuenta {
     private double subTotal;
     private double iva;
     
+    public Cuenta(String nombre,ArrayList<Menu> m) {        
+        nombreCliente = nombre;
+        menus = m;        
+    }
+    
     public void setNombreCliente(String x){
         nombreCliente = x;
     }       
@@ -26,16 +31,18 @@ public class Cuenta {
         return menus;
     }
     
-    public void setValorTotal(double x){
-        valorTotal = x;
+    public void setValorTotal(){
+        valorTotal = subTotal + (subTotal * iva);       
     }       
     
     public double getValorTotal(){
         return valorTotal;
     }
     
-    public void setSubTotal(double x){
-        subTotal = x;
+    public void setSubTotal(){
+        for (int i = 0; i < getMenus().size(); i++) {
+            subTotal = subTotal + getMenus().get(i).getValorMenu();
+        } 
     }       
     
     public double getSubTotal(){
