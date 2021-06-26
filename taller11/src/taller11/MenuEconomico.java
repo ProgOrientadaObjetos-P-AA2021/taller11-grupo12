@@ -1,40 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package taller11;
 
-/**
- *
- * @author jamil
- */
-public class MenuEconomico {
-    public class EconomicalMenu extends Menu{
-    private final double porcentajeDescuento = 0.10;
+public class MenuEconomico extends Menu{
+    
+    private double porcentajeDescuento;
+    
+    public MenuEconomico(String nombre,double vIM, double vP) {
+        super(nombre, vIM);
+        porcentajeDescuento = vP;        
+    }
 
-    public EconomicalMenu(String nombrePlato, double valorInicial) {
-        super(nombrePlato, valorInicial);
-        setValorMenu();
+    @Override
+    public void setValorMenu(){
+        valorMenu = valorInicialMenu - porcentajeDescuento;
     }
 
     public double getPorcentajeDescuento() {
         return porcentajeDescuento;
     }
 
-    public void setValorInicial(double valorInicial) {
-        this.valorInicial = valorInicial;
+    public void setPorcentajeDescuento(){
+        porcentajeDescuento = valorInicialMenu * 0.10;
     }
 
     @Override
-    void setValorMenu() {
-        this.valorMenu = valorInicial - (valorInicial * porcentajeDescuento);
+    public String toString(){
+        String cadena = String.format("\nMenu del dia.-\n"
+                + "Nombre del plato: %s\n"                
+                + "Valor inicial del menu: %.2f\n"
+                + "Valor de postre: %.2f\n"
+                + "Valor de bebida: %.2f\n"
+                + "Valor del menu: %.2f\n",
+                getNombrePlato(),getValorInicialMenu(),getValorPostre(),
+                getValorBebida(),getValorMenu());
+        
+        return cadena;
     }
-    @Override
-    public String toString() {
-        this.nombrePlato += " + guarniciÃ³n + pastel";
-        System.out.println("-----------------------");
-        return String.format("%s   Porcentaje Descuento: %.2f\n", super.toString(), porcentajeDescuento);
-    }
-}
 }

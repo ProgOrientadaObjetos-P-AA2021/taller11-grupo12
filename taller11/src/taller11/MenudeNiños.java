@@ -1,24 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package taller11;
 
-/**
- *
- * @author jamil
- */
-public class MenudeNiños {
+public class MenudeNiños extends Menu{
     private double valorHelado;
     private double valorPastel;
 
-    public MenudeNiños(String nP, double vM, double vI, double vH, double vP) {
-        super(nP, vM, vI);
-        valorHelado = vH;
-        valorPastel = vP;
+    public MenudeNiños(String nombre,double vIM, double vP,
+            double vB) {
+        super(nombre, vIM);
+        valorHelado = vP;
+        valorPastel = vB;
     }
 
+    @Override
+    public void setValorMenu(){
+        valorMenu = valorHelado + valorPastel + valorInicialMenu;
+    }
+    
     public double obtenerValorHelado() {
         return valorHelado;
     }
@@ -35,12 +32,17 @@ public class MenudeNiños {
         valorPastel = vP;
     }
 
-    public String toString() {
-        return String.format("Nombre del plato: %s\nValor del menu: %.2f\n"
+    @Override
+    public String toString(){
+        String cadena = String.format("\nMenu del niños.-\n"
+                + "Nombre del plato: %s\n"                
                 + "Valor inicial del menu: %.2f\n"
-                + "valor de porcion de helado: %.2f\n"
-                + "Valor de porcion de pastel: %.2f\n",
-                 obtenerNombrePlato(), obtenerValorMenu(),
-                obtenerValorInicial(), obtenerValorHelado(), obtenerValorPastel());
+                + "Valor de porcion de helado: %.2f\n"
+                + "Valor de porcion de pastel: %.2f\n"
+                + "Valor del menu: %.2f\n",
+                getNombrePlato(),getValorInicialMenu(),obtenerValorHelado(),
+                obtenerValorPastel(),getValorMenu());
+        
+        return cadena;
     }
 }
