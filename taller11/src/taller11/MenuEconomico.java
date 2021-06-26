@@ -4,9 +4,8 @@ public class MenuEconomico extends Menu{
     
     private double porcentajeDescuento;
     
-    public MenuEconomico(String nombre,double vIM, double vP) {
-        super(nombre, vIM);
-        porcentajeDescuento = vP;        
+    public MenuEconomico(String nombre,double vIM) {
+        super(nombre, vIM);               
     }
 
     @Override
@@ -24,15 +23,13 @@ public class MenuEconomico extends Menu{
 
     @Override
     public String toString(){
-        String cadena = String.format("\nMenu del dia.-\n"
+        String cadena = String.format("\nMenu economico.-\n"
                 + "Nombre del plato: %s\n"                
                 + "Valor inicial del menu: %.2f\n"
-                + "Valor de postre: %.2f\n"
-                + "Valor de bebida: %.2f\n"
+                + "Porcentaje de descuento: %.2f\n"
                 + "Valor del menu: %.2f\n",
-                getNombrePlato(),getValorInicialMenu(),getValorPostre(),
-                getValorBebida(),getValorMenu());
-        
+                getNombrePlato(),getValorInicialMenu(),getPorcentajeDescuento(),
+                getValorMenu());        
         return cadena;
     }
 }
